@@ -8,6 +8,7 @@ import {
   Tag,
   theme,
   Typography,
+  Image,
 } from "antd";
 import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 import "./Snippet.css";
@@ -45,6 +46,7 @@ const NewsSnippet: React.FC<NewsSnippetProps> = ({ newsData }) => {
     AB,
     URL,
     AU,
+    FAV,
   } = newsData;
   const date = FormattedDate(DP);
   const traffic = TRAFFIC.map((item) => FormattedTraffic(item));
@@ -78,6 +80,7 @@ const NewsSnippet: React.FC<NewsSnippetProps> = ({ newsData }) => {
         <Space direction="vertical">
           <Flex justify="flex-start" align="center" gap="small">
             <Link underline href={DOM} target="_blank" className="small_text">
+              <Image src={FAV} />
               {DOM}
             </Link>
             <Text type="secondary" className="small_text">
